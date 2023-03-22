@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const PORT = process.env.PORT || 3001;
+
 
 const indexRouter = require('./routes/index');
 
@@ -17,4 +19,6 @@ app.use('/', indexRouter);
 app.use(moviesRoutes);
 app.use(genresRoutes);
 
-app.listen('3001', () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(PORT, () => {
+    console.log("El servidor esta corriendo en http://localhost:" + PORT);
+})
