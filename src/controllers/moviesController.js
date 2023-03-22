@@ -6,7 +6,10 @@ const Movies = db.Movie;
 
 const moviesController = {
     list:(req, res) => {
-        return res.send('Todo ok')
+        Movies.findAll()
+        .then(peliculas => {
+            return res.send(peliculas)
+        })
     }
 }
 
